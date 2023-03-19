@@ -1,0 +1,35 @@
+@host = http://localhost:5110
+@endpoint=fooditem
+@id=3
+
+# Request 
+#################################### Post
+POST {{host}}/api/{{endpoint}}
+Content-Type:   application/json
+
+{
+  "foodItemId": 3,
+  "foodItemName": "Shiro",
+  "foodMainImgName": "shiro.jpeg",
+  "price": 25
+}
+
+############################# GET All
+GET  {{host}}/api/{{endpoint}}
+Content-Type:   application/json
+
+################################### GET BY ID
+GET  {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+
+################################### POST
+PUT  {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+
+{
+ "price": 50
+}
+#################################### Delete
+DELETE   {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+

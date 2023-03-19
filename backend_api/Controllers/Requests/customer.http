@@ -1,0 +1,35 @@
+@host = http://localhost:5110
+@endpoint=customer
+@id=2
+
+# Request 
+################################### POST
+POST {{host}}/api/{{endpoint}}
+Content-Type:   application/json
+
+{
+  "customerName": "Aron",
+  "customerAvator": "mesi.jpeg"
+
+}
+
+############################# GET
+GET  {{host}}/api/{{endpoint}}
+Content-Type:   application/json
+
+################################### GET BY ID
+GET  {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+
+#################################### PUT
+PUT  {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+
+{
+ "customerName": "Eden",
+ "customerAvator":"shiro.jpeg"
+}
+#################################### Delete
+DELETE   {{host}}/api/{{endpoint}}/{{id}}
+Content-Type:   application/json
+
