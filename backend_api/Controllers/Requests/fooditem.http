@@ -1,11 +1,13 @@
 @host = http://localhost:5110
 @endpoint=fooditem
 @id=3
+@jwttoken= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjBjNGUyNmUwLTNjYzktNGVjMi1hNTBkLTgyNGVmMTA2ZWZhOSIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInN1YiI6InVzZXJAZXhhbXBsZS5jb20iLCJqdGkiOiJkY2M0MTAwOS00Zjc2LTQ4MTMtYWE5NC04OTMwMWFkMmQ1ZjQiLCJuYmYiOjE2NzkzMzUzMTQsImV4cCI6MTY3OTQwNzMxNCwiaWF0IjoxNjc5MzM1MzE0fQ.TT8Mb_HOb5xba7ROYionpMll3BvbT601OOu7El4hTIA
 
 # Request 
 #################################### Post
 POST {{host}}/api/{{endpoint}}
 Content-Type:   application/json
+Authorization:  Bearer {{jwttoken}}
 
 {
   "foodItemId": 3,
@@ -17,14 +19,17 @@ Content-Type:   application/json
 ############################# GET All
 GET  {{host}}/api/{{endpoint}}
 Content-Type:   application/json
+Authorization:  Bearer {{jwttoken}}
 
 ################################### GET BY ID
 GET  {{host}}/api/{{endpoint}}/{{id}}
 Content-Type:   application/json
+Authorization:  Bearer {{jwttoken}}
 
 ################################### POST
 PUT  {{host}}/api/{{endpoint}}/{{id}}
 Content-Type:   application/json
+Authorization:  Bearer {{jwttoken}}
 
 {
  "price": 50
@@ -32,4 +37,5 @@ Content-Type:   application/json
 #################################### Delete
 DELETE   {{host}}/api/{{endpoint}}/{{id}}
 Content-Type:   application/json
+Authorization:  Bearer {{jwttoken}}
 

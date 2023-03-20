@@ -1,13 +1,18 @@
-﻿// 
+﻿using System.Net;
+// 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_api.Models;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace backend_api.Controllers;
 
 [Route("api/[controller]")]
+
 [ApiController]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class FoodItemController : ControllerBase
 {
     private readonly MsaDBContext _context;
