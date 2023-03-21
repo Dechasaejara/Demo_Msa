@@ -1,4 +1,5 @@
 // 
+using backend_api.Models.DTOs.Request;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,8 @@ public class MsaDBContext : IdentityDbContext
     {
         //  Parameter values pass when instance of Db context created through DI
     }
+    public virtual DbSet<User> Users { get; set; }
+    // 
     public DbSet<Customer> Customers { get; set; }
     public DbSet<FoodItem> FoodItems { get; set; }
     public DbSet<OrderMaster> OrderMasters { get; set; }

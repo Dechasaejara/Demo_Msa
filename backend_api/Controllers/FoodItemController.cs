@@ -54,7 +54,9 @@ public class FoodItemController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<FoodItem>> CreateFoodItem(FoodItem fooditem)
     {
+
         _context.FoodItems.Add(fooditem);
+
         await _context.SaveChangesAsync();
         return CreatedAtAction("GetFoodItems", new { id = fooditem.FoodItemId }, fooditem);
     }

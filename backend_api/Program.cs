@@ -22,8 +22,9 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
 
     // Database Dependency Injection
-    builder.Services.AddDbContext<MsaDBContext>(options => options.UseInMemoryDatabase(databaseName: "MsaDB"));
-    // TODO: Sql server Db ConnectionString
+    // builder.Services.AddDbContext<MsaDBContext>(options => options.UseInMemoryDatabase(databaseName: "MsaDB"));
+    // TODO: Sqlite  Db ConnectionString
+    builder.Services.AddDbContext<MsaDBContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("AppSqliteDBContext")));
 
     // Jwt should be after DB Di
     builder.Services.AddAuthentication(options =>
